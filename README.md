@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Podwise: Podcast Content Extractor
 
 Podwise automates the extraction of key insights, book recommendations, and product mentions from podcast transcripts. It helps podcasters and content enthusiasts analyze podcasts quickly and effectively without manual effort.
@@ -111,3 +112,7 @@ Summary File: Inside_Gong_summary.txt
 ## License
 This project is licensed under the MIT License.
 
+=======
+# podwise
+AI-Powered Podcast Analysis Assistant: A reliable AI companion that simplifies podcast processing, providing structured highlights, including recommended books, products, and key takeaways.
+>>>>>>> 88e1408458cf12296e07f972671674788cd20ad2
