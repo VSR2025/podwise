@@ -1,0 +1,69 @@
+project:
+  name: Podwise
+  description: >
+    Podwise is a Python tool that automates the scraping, transcription, and analysis
+    of podcast episodes from a specified YouTube channel. It extracts book and product
+    recommendations and generates concise summaries for each episode, providing insights
+    for podcasters, researchers, and enthusiasts.
+
+  version: 1.0.0
+
+environment:
+  variables:
+    - OPENAI_API_KEY: "Your OpenAI API Key (required)"
+    - CHANNEL_URL: "URL of the YouTube channel (required)"
+    - BASE_OUTPUT_DIR: "Directory for output files (default: ./output)"
+    - DEFAULT_NUM_VIDEOS: "Number of episodes to process (default: 5)"
+  dotenv_file: ".env"
+
+dependencies:
+  core:
+    - python-dotenv>=0.19.0
+    - pandas>=1.3.0
+    - selenium>=4.0.0
+    - youtube-transcript-api>=0.5.0
+    - openai>=0.27.0
+    - pathlib>=1.0.1
+  additional:
+    - webdriver-manager>=3.8.0
+    - tqdm>=4.65.0
+
+scripts:
+  main_script: podwise.py
+  description: >
+    Executes the main pipeline for scraping, transcribing, and analyzing podcast episodes.
+  usage:
+    - Install dependencies: `pip install -r requirements.txt`
+    - Set up `.env` file with your API key and channel URL.
+    - Run the script: `python podwise.py`
+
+files:
+  included:
+    - podwise.py
+    - README.md
+    - requirements.txt
+    - .env
+  output:
+    - output/episodes.csv: >
+        A CSV file containing details for all processed episodes, including book and product recommendations
+        and links to summary files.
+    - output/*.txt: >
+        Individual transcript and summary files for each processed episode.
+
+usage:
+  setup_steps:
+    - Clone the repository.
+    - Create a Python virtual environment (recommended).
+    - Install dependencies using `requirements.txt`.
+    - Configure `.env` with required environment variables.
+    - Run `podwise.py` to process episodes.
+  outputs:
+    - Extracted book and product recommendations.
+    - Summary of key episode insights.
+    - Data saved in CSV and text files for easy access.
+
+author:
+  name: "Your Name"
+  contact: "your.email@example.com"
+
+license: MIT
